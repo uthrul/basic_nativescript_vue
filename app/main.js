@@ -8,7 +8,11 @@ new Vue({
     <Frame>
       <Page>
         <Stacklayout>
-          <Label v-for="todo in todos" :text="todo.text"></Label>
+          <ListView v-for="todo in todos">
+            <v-template>
+              <Label :text="todo.text"></Label>
+            </v-template>
+          </ListView>
         </Stacklayout>
       </Page>
     </Frame>
