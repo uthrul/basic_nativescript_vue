@@ -8,7 +8,7 @@ new Vue({
     <Frame>
       <Page>
       <Stacklayout>
-      <TextField :text="message"></TextField>
+      <TextField v-model="message"></TextField>
         <Label :text="message"v-on:tap="sayHello "></Label>
       </Stacklayout>
       </Page>
