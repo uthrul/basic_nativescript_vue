@@ -7,22 +7,18 @@ new Vue({
   template: `
     <Frame>
       <Page>
-        <Stacklayout>
-          <ListView v-for="todo in todos">
-            <v-template>
-              <Label :text="todo.text"></Label>
-            </v-template>
-          </ListView>
-        </Stacklayout>
+      <Stacklayout>
+        <Label :text="message"v-on:tap="sayHello "></Label>
+      </Stacklayout>
       </Page>
     </Frame>
   `,
   data:{
-    message: 'Hello Native Vue',
-    todos: [
-      {text: "Learn NativeScript-Vue"},
-      {text: "Learn NativeScript-angular"},
-      {text: "Learn React Native"}
-    ]
+    message: 'Hello Native Vue'
+  },
+  methods:{
+sayHello: function () {
+  alert("Hi vue People")
+}
   }
 }).$start()
