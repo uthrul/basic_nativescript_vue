@@ -8,14 +8,16 @@ new Vue({
     <Frame>
       <Page>
       <Stacklayout>
-      <TextField v-model="message"></TextField>
-        <Label :text="message"v-on:tap="sayHello "></Label>
+        <TextField v-model="firstName"></TextField>
+        <TextField v-model="lastName"></TextField>
+        <Label :text="firstName+ ' ' + lastName"></Label>
       </Stacklayout>
       </Page>
     </Frame>
   `,
   data:{
-    message: 'Hello Native Vue'
+    firstName:"",
+    lastName:""
   },
   methods:{
 sayHello: function () {
