@@ -7,12 +7,18 @@ new Vue({
   template: `
     <Frame>
       <Page>
-        <Label v-show="visible" :text="message"></Label>
+        <Stacklayout>
+          <Label v-for="todo in todos" :text="todo.text"></Label>
+        </Stacklayout>
       </Page>
     </Frame>
   `,
   data:{
     message: 'Hello Native Vue',
-    visible: true
+    todos: [
+      {text: "Learn NativeScript-Vue"},
+      {text: "Learn NativeScript-angular"},
+      {text: "Learn React Native"}
+    ]
   }
 }).$start()
