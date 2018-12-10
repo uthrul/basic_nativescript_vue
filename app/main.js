@@ -7,7 +7,7 @@ new Vue({
   template: `
     <Frame>
       <Page>
-        <Label v-if="visible" :text="message"></Label>
+        <Label v-show="visible" :text="message"></Label>
       </Page>
     </Frame>
   `,
