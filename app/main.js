@@ -17,15 +17,11 @@ new Vue({
   `,
   data:{
     firstName:"",
-    lastName:"",
-    fullName:""
+    lastName:""
   },
-  watch: {
-    firstName: function (val) {
-      this.fullName = val + " " + this.lastName;
-    },
-    lastName: function (val) {
-      this.fullName = this.firstName + " " + val;
-    },
+  computed: {
+    fullName: function () {
+      return this.firstName + " " + this.lastName;
+    }
   }
 }).$start()
