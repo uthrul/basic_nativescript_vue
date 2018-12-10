@@ -4,8 +4,11 @@ new Vue({
   template: `
     <Frame>
       <Page>
-        <Label text="Hello Vue"></Label>
+        <Label v-bind:text="message"></Label>
       </Page>
     </Frame>
-  `
+  `,
+  data:{
+    message: 'Hello Native Vue'
+  }
 }).$start()
