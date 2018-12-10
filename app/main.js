@@ -1,5 +1,8 @@
 import Vue from 'nativescript-vue'
 
+import VueDevtools from 'nativescript-vue-devtools';
+Vue.use(VueDevtools);
+
 new Vue({
   template: `
     <Frame>
@@ -10,6 +13,6 @@ new Vue({
   `,
   data:{
     message: 'Hello Native Vue',
-    visible: false
+    visible: true
   }
 }).$start()
