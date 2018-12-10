@@ -10,18 +10,22 @@ new Vue({
       <Stacklayout>
         <TextField v-model="firstName"></TextField>
         <TextField v-model="lastName"></TextField>
-        <Label :text="firstName+ ' ' + lastName"></Label>
+        <Label :text="fullName"></Label>
       </Stacklayout>
       </Page>
     </Frame>
   `,
   data:{
     firstName:"",
-    lastName:""
+    lastName:"",
+    fullName:""
   },
-  methods:{
-sayHello: function () {
-  alert("Hi vue People")
-}
+  watch: {
+    firstName: function (val) {
+      this.fullName = val + " " + this.lastName;
+    },
+    lastName: function (val) {
+      this.fullName = this.firstName + " " + val;
+    },
   }
 }).$start()
