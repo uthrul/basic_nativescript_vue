@@ -10,7 +10,7 @@ new Vue({
       <Stacklayout>
         <TextField v-model="firstName"></TextField>
         <TextField v-model="lastName"></TextField>
-        <TextField v-model="fullName"></TextField>
+        <TextField :text="getfullName()"></TextField>
       </Stacklayout>
       </Page>
     </Frame>
@@ -18,6 +18,11 @@ new Vue({
   data:{
     firstName:"",
     lastName:""
+  },
+  methods: {
+    getfullName: function () {
+      return this.firstName + " " + this.lastName;
+    }
   },
   computed: {
     fullName: {
