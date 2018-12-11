@@ -13,9 +13,10 @@
 
 <script>
 import groceryData from '../grocery-data.json';
-import GroceryItem from "../GroceryItem";
+import GroceryItem from "./GroceryItem";
 
 export default {
+  components: { GroceryItem},
   data() {
     return {
       items: groceryData.groceryItems
