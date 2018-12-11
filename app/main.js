@@ -9,11 +9,17 @@ new Vue({
   template: `
     <Frame>
       <Page>
-      <Stacklayout>
-        <GroceryItem></GroceryItem>
-      </Stacklayout>
+        <Stacklayout>
+          <ListView for="item in items">
+            <v-template>
+              <GroceryItem></GroceryItem>
+            </v-template>
+          </ListView>
+        </Stacklayout>
       </Page>
     </Frame>
   `,
-  data: {}
+  data: {
+    items: [1, 2, 3]
+  }
 }).$start()
