@@ -1,6 +1,7 @@
 import Vue from 'nativescript-vue'
 
-import GroceryItem from './GroceryItem'
+import groceryData from './grocery-data.json';
+import GroceryItem from "./GroceryItem";
 
 import VueDevtools from 'nativescript-vue-devtools';
 Vue.use(VueDevtools);
@@ -12,7 +13,8 @@ new Vue({
         <Stacklayout>
           <ListView for="item in items">
             <v-template>
-              <GroceryItem></GroceryItem>
+              <GroceryItem 
+              :groceryItem="item"></GroceryItem>
             </v-template>
           </ListView>
         </Stacklayout>
@@ -20,6 +22,6 @@ new Vue({
     </Frame>
   `,
   data: {
-    items: [1, 2, 3]
+    items: groceryData.groceryItems
   }
 }).$start()
