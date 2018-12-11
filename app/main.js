@@ -1,27 +1,15 @@
 import Vue from 'nativescript-vue'
 
-import groceryData from './grocery-data.json';
-import GroceryItem from "./GroceryItem";
+import App from './components/App'
 
 import VueDevtools from 'nativescript-vue-devtools';
 Vue.use(VueDevtools);
 
 new Vue({
+  components: {App},
   template: `
     <Frame>
-      <Page>
-        <Stacklayout>
-          <ListView for="item in items">
-            <v-template>
-              <GroceryItem 
-              :groceryItem="item"></GroceryItem>
-            </v-template>
-          </ListView>
-        </Stacklayout>
-      </Page>
+      <App/>
     </Frame>
-  `,
-  data: {
-    items: groceryData.groceryItems
-  }
+  `
 }).$start()

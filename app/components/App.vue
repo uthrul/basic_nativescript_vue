@@ -1,17 +1,24 @@
 <template>
   <Page>
-    <ActionBar title="Welcome to NativeScript-Vue!"/>
-    <GridLayout columns="*" rows="*">
-      <Label class="message" :text="msg" col="0" row="0"/>
-    </GridLayout>
+    <Stacklayout>
+      <ListView for="item in items">
+        <v-template>
+          <GroceryItem 
+          :groceryItem="item"></GroceryItem>
+        </v-template>
+      </ListView>
+    </Stacklayout>
   </Page>
 </template>
 
 <script>
+import groceryData from '../grocery-data.json';
+import GroceryItem from "../GroceryItem";
+
 export default {
   data() {
     return {
-      msg: "Hello World!"
+      items: groceryData.groceryItems
     };
   }
 };
